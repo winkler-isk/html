@@ -1,14 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}  
+</style>
+</head>
+<body>
+
+<h2>The Expanse Main Characters</h2>
+<p>humanity has colonized the Solar System, meet the people that are gonna safe us from an interstellar catastrophy:</p>
+
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'James Holden')">James Holden</button>
   <button class="tablinks" onclick="openCity(event, 'Naomi Nagata')">Naomi Nagata</button>
-  <button class="tablinks" onclick="openCity(event, 'xy')">xy</button>
+  <button class="tablinks" onclick="openCity(event, 'xyz')">xyz</button>
 </div>
 
 <div id="James Holden" class="tabcontent">
-  <h3>James Holden</h3> 
-  <p> <img src="JamesHolden.jpg" alt="Character 1"> 
+  <h2>James Holden</h2>
+  <p> <img src="JamesHolden.jpg" alt="Character 1">
+        
+        <p class="character-description">
             "I know you're trying to save lives. I am too!" - James Holden
             
             <ul>
@@ -17,13 +67,13 @@
                 <li>Stubborn: Has a tendency to stick to his convictions, even in the face of opposition or danger.</li>
                 <li>Impulsive: Sometimes acts on instinct rather than careful deliberation, leading to risky decisions.</li>
             </ul>
-</p>
-
+            </p>
+</div>
 
 <div id="Naomi Nagata" class="tabcontent">
-  <h3>Naomi Nagata</h3>
+  <h2>Naomi Nagata</h2>
   <p> <img src="Naomi Nagata.jpg" alt="Character 2">
-        <h2>Naomi Nagata</h2>
+        
         <p class="character-description">
             "A love story. Might help cool things down a bit" - Naomi Nagata
             <ul>
@@ -32,79 +82,33 @@
                 <li>Independent: Values her autonomy and freedom, preferring to make decisions based on logic and necessity rather than emotion.</li>
                 <li>Caring: Despite her tough exterior, she deeply cares for her friends and crewmates, often acting as a stabilizing force during times of crisis.</li>
             </ul></p> 
-</div>
-</div>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Expanse Characters</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #007BFF;
-        }
-
-        .character {
-            margin-bottom: 20px;
-        }
-
-        .character img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .character-description {
-            margin-top: 10px;
-            text-align: justify;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>The Expanse Main Characters</h1>
-
-    <div class="character">
-        <img src="JamesHolden.jpg" alt="Character 1">
-        <h2>James Holden</h2>
-        <p class="character-description">
-            "I know you're trying to save lives. I am too!" - James Holden
             
-            <ul>
-                <li>Idealistic: Holden is driven by a strong sense of justice and morality, often placing principles above personal gain.</li>
-                <li>Charismatic: Possesses natural leadership qualities that inspire loyalty and trust in others.</li>
-                <li>Stubborn: Has a tendency to stick to his convictions, even in the face of opposition or danger.</li>
-                <li>Impulsive: Sometimes acts on instinct rather than careful deliberation, leading to risky decisions.</li>
-            </ul>
+            
+</div>
 
+<div id="xyz" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
 
-
-
-
-        </p>
-    </div>
-
-    <div class="character">
-        <img src="Naomi Nagata.jpg" alt="Character 2">
-        <h2>Naomi Nagata</h2>
-        <p class="character-description">
-            "A love story. Might help cool things down a bit" - Naomi Nagata
-            <ul>
-                <li>Intelligent: Possesses exceptional technical skills and problem-solving abilities, especially in engineering and mechanics.</li>
-                <li>Pragmatic: Balances Holden's idealism with a more realistic perspective, often providing practical solutions to complex problems.</li>
-                <li>Independent: Values her autonomy and freedom, preferring to make decisions based on logic and necessity rather than emotion.</li>
-                <li>Caring: Despite her tough exterior, she deeply cares for her friends and crewmates, often acting as a stabilizing force during times of crisis.</li>
-            </ul>
-
-        </p>
-    </div>
-
-    
-
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+   
+  
+   
 </body>
-</html>
+</html> 
